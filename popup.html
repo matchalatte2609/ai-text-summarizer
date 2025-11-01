@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Text Summarizer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AI Text Summarizer</h1>
+    </header>
+
+    <main>
+      <div class="input-section">
+        <label for="text-input">Enter text to summarize:</label>
+        <textarea
+          id="text-input"
+          placeholder="Paste your text here or click 'Extract Text' to get content from the current page or PDF..."
+          rows="8"
+        ></textarea>
+      </div>
+
+      <div class="button-group">
+        <button id="extract-btn" class="btn btn-secondary">Extract Text</button>
+        <button id="summarize-btn" class="btn btn-primary">Summarize</button>
+      </div>
+
+      <div id="status" class="status hidden"></div>
+
+      <div class="output-section">
+        <label>Summary:</label>
+        <div id="summary-output" class="output-box">
+          Your summary will appear here...
+        </div>
+      </div>
+
+      <div class="settings-section">
+        <details>
+          <summary>Settings</summary>
+          <div class="settings-grid">
+            <div class="setting-item">
+              <label for="summary-type">Type:</label>
+              <select id="summary-type">
+                <option value="tldr">TL;DR</option>
+                <option value="key-points">Key Points</option>
+                <option value="teaser">Teaser</option>
+                <option value="headline">Headline</option>
+              </select>
+            </div>
+
+            <div class="setting-item">
+              <label for="summary-length">Length:</label>
+              <select id="summary-length">
+                <option value="short">Short</option>
+                <option value="medium" selected>Medium</option>
+                <option value="long">Long</option>
+              </select>
+            </div>
+
+            <div class="setting-item">
+              <label for="summary-format">Format:</label>
+              <select id="summary-format">
+                <option value="plain-text">Plain Text</option>
+                <option value="markdown" selected>Markdown</option>
+              </select>
+            </div>
+          </div>
+        </details>
+      </div>
+    </main>
+
+    <footer>
+      <p>Powered by Chrome Built-in AI</p>
+    </footer>
+  </div>
+
+  <script src="pdf.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
